@@ -8,7 +8,7 @@
 
 #include <xc.h>
 #include "config.h"
-#include "I2C_LCD.h"
+//#include "I2C_LCD.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <math.h>
@@ -22,12 +22,12 @@ int RTemperature;
 //int Alarm;
 int RAlarm;
 //char* line1 = "Temp";
-char* TempSTR[16];
-int tempMin = 75;
-int tempMax = 130;
+//char* TempSTR[16];
+int tempMin = 55;
+int tempMax = 100;
 int fanSpeed;
-int fanLCD;
-char* fanSTR[16];
+//int fanLC/D;
+//char* fanSTR[16];
 float RT, VR, ln, T0, VRT;
 int i, i2;
 int c = 130;
@@ -64,9 +64,9 @@ int Alarms();
 
 void main(void) {
 
-    I2C_Master_Init();
-    LCD_Init(0x4E); // Initialize LCD module with I2C address = 0x4E
-    LCD_Clear();
+//    I2C_Master_Init();
+//    LCD_Init(0x4E); // Initialize LCD module with I2C address = 0x4E
+//    LCD_Clear();
     ADC_Init();
 
     //====================================================================
@@ -90,17 +90,17 @@ void main(void) {
     T1CON = 0x31; // start timer1 with the same settings like before.
     //====================================================================
 
-    LCD_Clear();
-    LCD_Set_Cursor(1, 1);
-    LCD_Write_String("  BBBBBBBBBBB");
-    LCD_Set_Cursor(2, 1);
-    LCD_Write_String("  AAAAAAAAAAA");
+//    LCD_Clear();
+//    LCD_Set_Cursor(1, 1);
+//    LCD_Write_String("  BBBBBBBBBBB");
+//    LCD_Set_Cursor(2, 1);
+//    LCD_Write_String("  AAAAAAAAAAA");
     Buzzer = 1;
     __delay_ms(5000);
     Buzzer = 0;
-    LCD_Clear();
-    LCD_Set_Cursor(1, 1);
-    LCD_Write_String("     Fan Test");
+//    LCD_Clear();
+//    LCD_Set_Cursor(1, 1);
+//    LCD_Write_String("     Fan Test");
     for (i; i <= 150; i++) {
         current_period = c;
         c = c + 5;
@@ -112,11 +112,11 @@ void main(void) {
     c = 0;
     current_period = 130;
 
-    LCD_Clear();
-    LCD_Set_Cursor(1, 1);
-    LCD_Write_String("     Fan Ok");
+//    LCD_Clear();
+//    LCD_Set_Cursor(1, 1);
+//    LCD_Write_String("     Fan Ok");
     __delay_ms(2000);
-    LCD_Clear();
+//    LCD_Clear();
 
     while (1) {
 
@@ -151,52 +151,52 @@ void main(void) {
             if ((RTemperature >= tempMin) && (RTemperature <= tempMax)) {
                 //            PWM = 1;
                 fanSpeed = map(RTemperature, tempMin, tempMax, 712, 2375);
-                fanLCD = map(RTemperature, tempMin, tempMax, 0, 100);
+//                fanLCD = map(RTemperature, tempMin, tempMax, 0, 100);
                 current_period = fanSpeed;
                 Buzzer = 0;
             }
             if (RTemperature > tempMax) {
                 Buzzer = 0;
                 current_period = 2375;
-                fanLCD = 100;
+//                fanLCD = 100;
             }
             if (RTemperature < tempMin) {
                 Buzzer = 0;
                 current_period = 130;
-                fanLCD = 0;
+//                fanLCD = 0;
             }
-            sprintf(TempSTR, "%3d C", RTemperature);
-            sprintf(fanSTR, "%3d", fanLCD);
-            LCD_Set_Cursor(1, 1);
-            LCD_Write_String("Temp Is : ");
-            LCD_Set_Cursor(1, 11);
-            LCD_Write_String(TempSTR);
-            LCD_Set_Cursor(2, 1);
-            LCD_Write_String("FanSpeed:");
-            LCD_Set_Cursor(2, 10);
-            LCD_Write_String(fanSTR);
-            LCD_Set_Cursor(2, 14);
-            LCD_Write_String("%");
-            __delay_ms(250);
+//            sprintf(TempSTR, "%3d C", RTemperature);
+//            sprintf(fanSTR, "%3d", fanLCD);
+//            LCD_Set_Cursor(1, 1);
+//            LCD_Write_String("Temp Is : ");
+//            LCD_Set_Cursor(1, 11);
+//            LCD_Write_String(TempSTR);
+//            LCD_Set_Cursor(2, 1);
+//            LCD_Write_String("FanSpeed:");
+//            LCD_Set_Cursor(2, 10);
+//            LCD_Write_String(fanSTR);
+//            LCD_Set_Cursor(2, 14);
+//            LCD_Write_String("%");
+            __delay_ms(10);
 
         }
 
         while (RAlarm >= 800) {
             RAlarm = Alarms();
             Buzzer = 1;
-            for (i; i <= 449; i++) {
-                current_period = c;
-                c = c + 5;
-                __delay_ms(30);
-            }
-            current_period = c;
-            LCD_Clear();
-            LCD_Set_Cursor(1, 1);
-            LCD_Write_String("Wire  Cut !!");
-            LCD_Set_Cursor(2, 1);
-            LCD_Write_String("Wire  Cut !!");
+//            for (i; i <= 449; i++) {
+//                current_period = c;
+//                c = c + 5;
+//                __delay_ms(30);
+//            }
+            current_period = 2375;
+//            LCD_Clear();
+//            LCD_Set_Cursor(1, 1);
+//            LCD_Write_String("Wire  Cut !!");
+//            LCD_Set_Cursor(2, 1);
+//            LCD_Write_String("Wire  Cut !!");
             __delay_ms(10);
-            LCD_Clear();
+//            LCD_Clear();
         }
 //
 //        while (RAlarm <= 20) {

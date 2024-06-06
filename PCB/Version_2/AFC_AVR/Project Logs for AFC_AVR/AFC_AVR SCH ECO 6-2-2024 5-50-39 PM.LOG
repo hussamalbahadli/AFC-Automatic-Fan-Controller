@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=5.6K NewDesignator=Temp
+Change Component Designator: OldDesignator=R1 NewDesignator=RESET
+Change Component Designator: OldDesignator=R2 NewDesignator=COMP
+Change Component Designator: OldDesignator=R3 NewDesignator=COMP
+Change Component Designator: OldDesignator=R4 NewDesignator=MOTOR

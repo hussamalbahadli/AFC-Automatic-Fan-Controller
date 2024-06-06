@@ -1,0 +1,9 @@
+Added Component: Designator=Q1(C945)
+Add component (AddParameter): Name = "Company"; Value = "IPA CO"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Designer"; Value = "Saeid Jorablo"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Last Update Time"; Value = "2008/08/04"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "C945"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Motor Pin=Q1-1
+Added Pin To Net: NetName=GND Pin=Q1-2
+Added Pin To Net: NetName=NetQ1_3 Pin=Q1-3
+Added Member To Class: ClassName=AFC_AVR Member=Component Q1 C945

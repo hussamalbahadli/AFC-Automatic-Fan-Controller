@@ -12,7 +12,7 @@
 #pragma config CPD = ON        // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)
 #pragma config WRT = OFF        // Flash Program Memory Write Enable bits (Write protection off; all program memory may be written to by EECON control)
 #pragma config CP = ON         // Flash Program Memory Code Protection bit (Code protection off)
-
+#define _XTAL_FREQ             8000000
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 

@@ -1,0 +1,51 @@
+Removed Pin From Net: NetName=Compressor Pin=COMP-1
+Removed Pin From Net: NetName=GND Pin=COMP-2
+Removed Pin From Net: NetName=Compressor_in Pin=COMP_IN-1
+Removed Pin From Net: NetName=Compressor Pin=COMP_IN-2
+Removed Pin From Net: NetName=NetQ1_3 Pin=MOTOR-2
+Removed Pin From Net: NetName=VCC Pin=RESET-1
+Removed Pin From Net: NetName=VCC Pin=Temp-1
+Removed Pin From Net: NetName=Temp_Sensor Pin=Temp-2
+Removed Member From Class: ClassName=AFC_AVR Member=COMP_IN
+Removed Member From Class: ClassName=AFC_AVR Member=MOTOR
+Removed Member From Class: ClassName=AFC_AVR Member=RESET
+Removed Member From Class: ClassName=AFC_AVR Member=Temp
+Added Component: Designator=R1(Res-(1/4))
+Add component (AddParameter): Name = "Power"; Value = "1/8 W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "5.6K"; VariantName = "[No Variations]"
+Added Component: Designator=R2(Res-(1/4))
+Add component (AddParameter): Name = "Power"; Value = "1/8 W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Component: Designator=R3(Res-(1/4))
+Add component (AddParameter): Name = "Power"; Value = "1/8 W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Component: Designator=R4(Res-(1/4))
+Add component (AddParameter): Name = "Power"; Value = "1/8 W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "30K"; VariantName = "[No Variations]"
+Added Component: Designator=R5(Res-(1/4))
+Add component (AddParameter): Name = "Power"; Value = "1/8 W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VCC Pin=R1-1
+Added Pin To Net: NetName=Temp_Sensor Pin=R1-2
+Added Pin To Net: NetName=VCC Pin=R2-2
+Added Pin To Net: NetName=Compressor Pin=R3-1
+Added Pin To Net: NetName=GND Pin=R3-2
+Added Pin To Net: NetName=Compressor_in Pin=R4-1
+Added Pin To Net: NetName=Compressor Pin=R4-2
+Added Pin To Net: NetName=NetQ1_3 Pin=R5-2
+Added Pin To Net: NetName=NetR2_1 Pin=R2-1
+Added Pin To Net: NetName=NetR2_1 Pin=U2-1
+Added Net: Name=NetR2_1
+Added Pin To Net: NetName=NetR5_1 Pin=R5-1
+Added Pin To Net: NetName=NetR5_1 Pin=U2-15
+Added Net: Name=NetR5_1
+Added Member To Class: ClassName=AFC_AVR Member=Component R1 5.6K
+Added Member To Class: ClassName=AFC_AVR Member=Component R2 10K
+Added Member To Class: ClassName=AFC_AVR Member=Component R3 10K
+Added Member To Class: ClassName=AFC_AVR Member=Component R4 30K
+Added Member To Class: ClassName=AFC_AVR Member=Component R5 10K
