@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Altium local history / previews / logs
+History/
+__Previews/
+Project Logs for */
+*.SchDocPreview
